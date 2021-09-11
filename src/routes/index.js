@@ -1,5 +1,8 @@
 const express = require('express');
 const apiRouter = require('./api.routes');
+const userRouter = require('./user.routes');
+const positionRouter = require('./position.routes');
+const companyRouter = require('./company.routes');
 
 const routes = express.Router();
 
@@ -22,9 +25,12 @@ routes.get('*', limiter, speedLimiter, async (request, response, next) => {
 });
 
 routes.get('/', (req, res) => {
-    res.status(200).json({ healthcheck: true });
+    res.status(200).json({ message: 'GET / - status 200' });
 });
 
-routes.use('/api', apiRouter);
+routes.use('/api/v1', apiRouter);
+routes.use('/user', userRouter);
+routes.use('/position', positionRouter);
+routes.use('/company', companyRouter);
 
 module.exports = routes;

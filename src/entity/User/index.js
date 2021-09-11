@@ -1,24 +1,59 @@
-const EntitySchema = require("typeorm").EntitySchema;
+const { EntitySchema } = require('typeorm');
 
-module.exports = new EntitySchema({
+const UserEntity = new EntitySchema({
     name: "User", 
-    tableName: "users",
+    tableName: "user",
     columns: {
         id: {
             primary: true,
-            type: "int",
-            generated: true
+            type: "varchar"
         },
         name: {
             type: "varchar"
+        },
+        email: {
+            type: 'varchar',
+            unique: true
+        },
+        borndate: {
+            type: 'date'
+        },
+        uf: {
+            type: 'varchar'
+        },
+        city: {
+            type: 'varchar'
+        },
+        schooling: {
+            type: 'varchar'
+        },
+        companyId: {
+            type: 'varchar',
+            nullable: true
+        },
+        positionId: {
+            type: 'varchar',
+            nullable: true
+        },
+        created_at: {
+            type: 'timestamp',
+            default: 'now()'
         }
-    },
+     },
     relations: {
-        categories: {
-            target: "Category",
-            type: "many-to-many",
+        position: {
+            target: "Position",
+            type: "many-to-one",
+            joinTable: true,
+            cascade: true
+        },
+        company: {
+            target: "Company",
+            type: "many-to-one",
             joinTable: true,
             cascade: true
         }
     }
 });
+
+module.exports = UserEntity;

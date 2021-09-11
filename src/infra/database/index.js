@@ -1,14 +1,19 @@
-var typeorm = require("typeorm");
+const typeorm = require('typeorm');
+const dbConfig = require('../config');
+const User = require('../../entity/User');
+const Position = require('../../entity/Position');
+const Company = require('../../entity/Company');
 
-module.exports = typeorm.createConnection({
-                type: "postgres",
-                host: "localhost",
-                port: 5432,
-                username: "test",
-                password: "admin",
-                database: "test",
-                synchronize: true,
-                entities: [
-                    require("../../entity/User")
-                ]
-            });
+typeorm.createConnection({
+    ...dbConfig,
+    synchronize: true,
+    entities: [
+        User,
+        Position,
+        Company
+    ],
+    migrations: ['./migration/*.js'],
+    cli: {
+        migrationsDir: 'migration'
+    }
+});

@@ -1,3 +1,5 @@
+const userValidator = require('./user-validator');
+
 const notFound = (req, res, next) => {
     res.status(404);
     const error = new Error(`Not Found - ${req.originalUrl}`);
@@ -15,5 +17,6 @@ const errorHandler = (req, res, next) => {
 
 module.exports = {
     notFound,
-    errorHandler
+    errorHandler,
+    userValidator
 }

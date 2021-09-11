@@ -5,12 +5,16 @@ const cors = require('cors');
 
 require('dotenv').config();
 
+const logger = require('./infra/logger');
+logger.info('logger has set');
+
 const router = require('./routes');
 const { notFound, errorHandler } = require('./middlewares');
 
 const app = express();
 app.set('trust proxy', 1)
 
+app.use(express.json());
 app.use(morgan('dev'));
 app.use(helmet());
 
