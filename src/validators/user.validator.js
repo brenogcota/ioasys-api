@@ -15,7 +15,7 @@ const schema = Joi.object({
         .required(),
 
     schooling: Joi.string()
-        .valid('Superior', 'Médio').required()
+        .valid('Infantil', 'Fundamental', 'Médio', 'Superior', 'Pós-graduação', 'Mestrado', 'Doutorado')
         .required(),
 
     borndate: Joi.date(),
@@ -23,8 +23,8 @@ const schema = Joi.object({
     email: Joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
 
-    companyId: Joi.string().required(),
-    positionId: Joi.string().required(),
+    companyName: Joi.string().required(),
+    positionName: Joi.string().required(),
 })
 
 module.exports = schema;

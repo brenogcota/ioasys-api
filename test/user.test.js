@@ -6,13 +6,13 @@ require('dotenv').config()
 const port = process.env.PORT || 3001;
 
 
-test('Should return users', async function() {
-    const response = (await axios({
+test('Should return all users', async function() {
+    const status = (await axios({
                             url: `http://localhost:${port}/user`,
                             method: 'get'
-                        })).data;
+                        })).status;
 
-    expect(response).toHaveLength(0);
+    expect(status).toBe(200);
 });
 
 test('Should create a user', async function() {
@@ -22,12 +22,21 @@ test('Should create a user', async function() {
         borndate: '1999-07-01T00:00:00.000Z',
         uf: 'MG',
         city: 'BERILO',
-        schooling: 'Médio',
-        companyId: 'bfb8e9d4-7c9f-42de-ac40-cfd1e789697a',
-        positionId: '0140b3ee-8415-4c71-a2b7-b3b8431e9d52'
+        schooling: 'Superior',
+        companyName: 'Ioasys',
+        positionName: 'Empregado'
     }
 
     const status = (await axios.post(`http://localhost:${port}/user`, user)).status;
 
     expect(status).toBe(200);
+});
+
+test('Should return a users', async function() {
+    const response = (await axios({
+                            url: `http://localhost:${port}/user/:id`,
+                            method: 'get'
+                        })).data;
+
+    expect(response).toHaveLength(1);
 });

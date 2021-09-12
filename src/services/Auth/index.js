@@ -6,11 +6,11 @@ const create = async (req, res, next) => {
     try {
         const { email } = req.body;
         const userRepository = getRepository(User);
-        let user = await userRepository.find({ where: { email } });
+        let user = await userRepository.findOne({ where: { email } });
 
-        if(user.length < 1) return res.json({ message: 'User does not exists.' });
+        if(!user) return res.json({ message: 'User does not exists.' });
 
-        const { id } = user; 
+        const { id } = user;
         const token = jwt.sign({ id }, process.env.SECRET, {
           expiresIn: process.env.expiresIn * 60
         });
