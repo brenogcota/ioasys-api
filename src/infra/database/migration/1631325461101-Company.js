@@ -25,7 +25,7 @@ module.exports = class Company1631326461101 {
                     },
                     {
                         name: "founded_in",
-                        type: "varchar"
+                        type: "date"
                     },
                     {
                         name: "director",

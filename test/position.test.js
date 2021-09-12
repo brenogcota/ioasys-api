@@ -1,19 +1,18 @@
-const { test } = require("@jest/globals");
-const request = require('supertest');
-const app = require('../src/app');
+const { test, expect } = require("@jest/globals");
+const axios = require('axios');
 
 require('dotenv').config();
+
+const port = process.env.PORT || 3001;
 
 test('Should create a customer position', async function() {
     const position = {
         name: 'EMPREGADO'
     }
 
-    request(app)
-      .post('/position')
-      .send({ name: position.name }) 
-      .set('Accept', 'application/json')
-      .expect(200, position);
+    const status = (await axios.post(`http://localhost:${port}/position`, position)).status;
+
+    expect(status).toBe(200);
 });
 
 test('Should create a admin position', async function() {
@@ -21,11 +20,9 @@ test('Should create a admin position', async function() {
         name: 'ADMIN'
     }
 
-    request(app)
-      .post('/position')
-      .send({ name: position.name }) 
-      .set('Accept', 'application/json')
-      .expect(200, position);
+    
+      const status = (await axios.post(`http://localhost:${port}/position`, position)).status;
+      expect(status).toBe(200)
 });
 
 test('Should create a manager position', async function() {
@@ -33,11 +30,9 @@ test('Should create a manager position', async function() {
         name: 'GESTOR'
     }
 
-    request(app)
-      .post('/position')
-      .send({ name: position.name }) 
-      .set('Accept', 'application/json')
-      .expect(200, position);
+    
+    const status = (await axios.post(`http://localhost:${port}/position`, position)).status;
+    expect(status).toBe(200)
 });
 
 test('Should create a director position', async function() {
@@ -45,9 +40,7 @@ test('Should create a director position', async function() {
         name: 'DIRETOR'
     }
 
-    request(app)
-      .post('/position')
-      .send({ name: position.name }) 
-      .set('Accept', 'application/json')
-      .expect(200, position);
+    
+    const status = (await axios.post(`http://localhost:${port}/position`, position)).status;
+    expect(status).toBe(200)
 });

@@ -1,4 +1,5 @@
 const userValidator = require('./user-validator');
+const authMiddleware = require('./auth');
 
 const notFound = (req, res, next) => {
     res.status(404);
@@ -18,5 +19,6 @@ const errorHandler = (req, res, next) => {
 module.exports = {
     notFound,
     errorHandler,
-    userValidator
+    userValidator,
+    authMiddleware
 }

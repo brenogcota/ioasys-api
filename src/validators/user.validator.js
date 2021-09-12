@@ -18,17 +18,13 @@ const schema = Joi.object({
         .valid('Superior', 'Médio').required()
         .required(),
 
-    password: Joi.string()
-        .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$'))
-        .required(),
-
-    borndate: Joi.number()
-        .integer()
-        .min(1900)
-        .max(2021),
+    borndate: Joi.date(),
 
     email: Joi.string()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
+        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
+
+    companyId: Joi.string().required(),
+    positionId: Joi.string().required(),
 })
 
 module.exports = schema;

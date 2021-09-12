@@ -15,13 +15,10 @@ const CompanyEntity = new EntitySchema({
             type: 'varchar'
         },
         occupation: {
-            type: 'date'
+            type: 'varchar'
         },
         founded_in: {
-            type: 'varchar'
-        },
-        city: {
-            type: 'varchar'
+            type: 'date'
         },
         director: {
             type: 'varchar'

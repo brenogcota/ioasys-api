@@ -1,6 +1,6 @@
 const express = require('express');
 const UserService = require('../services/User');
-const { userValidator } = require('../middlewares');
+const { userValidator, authMiddleware } = require('../middlewares');
 
 const route = express.Router();
 
@@ -10,6 +10,6 @@ route.get('/', async (req, res) => {
         res.status(200).json(user);
 });
 
-route.post('/', userValidator, UserService.create);
+route.post('/', userValidator, authMiddleware, UserService.create);
 
 module.exports = route;

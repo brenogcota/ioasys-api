@@ -1,21 +1,20 @@
-const { test } = require("@jest/globals");
-const request = require('supertest');
-const app = require('../src/app');
+const { test, expect } = require("@jest/globals");
+const axios = require('axios');
 
 require('dotenv').config();
+
+const port = process.env.PORT || 3001;
 
 test('Should create a company', async function() {
     const company = {
         name: 'Ioasys',
         description: 'Software',
         occupation: 'software',
-        founded_in: Date.now(),
-        director_email: ''
+        founded_in: '2020-07-01',
+        director: 'breno@gmail.com'
     }
 
-    request(app)
-      .post('/company')
-      .send(company)
-      .set('Accept', 'application/json')
-      .expect(200, company);
+    const status = (await axios.post(`http://localhost:${port}/company`, company )).status;
+    
+    expect(status).toBe(200);
 });
