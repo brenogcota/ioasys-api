@@ -1,46 +1,50 @@
 const { test, expect } = require("@jest/globals");
-const axiosInstance = require('../src/config/axios');
+const httpAdapter = require('../src/infra/http');
 
 test('Should create a customer position', async function() {
-    const axios = await axiosInstance();
+    const http = await httpAdapter();
     const position = {
         name: 'EMPREGADO'
     }
 
-    const status = (await axios.post(`/position`, position)).status;
+    const { data, status } = await http.post(`/position`, position)
 
+    expect(data).toMatchObject(position);
     expect(status).toBe(200);
 });
 
 test('Should create a admin position', async function() {
-    const axios = await axiosInstance();
+    const http = await httpAdapter();
     const position = {
         name: 'ADMIN'
     }
 
+    const { data, status } = await http.post(`/position`, position);
     
-      const status = (await axios.post(`/position`, position)).status;
-      expect(status).toBe(200)
+    expect(data).toMatchObject(position);
+    expect(status).toBe(200);
 });
 
 test('Should create a manager position', async function() {
-    const axios = await axiosInstance();
+    const http = await httpAdapter();
     const position = {
         name: 'GESTOR'
     }
 
+    const { data, status } = await http.post(`/position`, position)
     
-    const status = (await axios.post(`/position`, position)).status;
+    expect(data).toMatchObject(position);
     expect(status).toBe(200)
 });
 
 test('Should create a director position', async function() {
-    const axios = await axiosInstance();
+    const http = await httpAdapter();
     const position = {
         name: 'DIRETOR'
     }
 
+    const { data, status } = await http.post(`/position`, position)
     
-    const status = (await axios.post(`/position`, position)).status;
+    expect(data).toMatchObject(position);
     expect(status).toBe(200)
 });

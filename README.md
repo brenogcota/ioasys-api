@@ -28,6 +28,18 @@ Test's
 ➜  api git:(master) ✗ npm run test
 ```
 
+```sh
+PASS  test/position.test.js
+PASS  test/session.test.js
+PASS  test/api.test.js
+
+Test Suites: 0 failed, 6 passed, 6 total
+Tests:       0 failed, 19 passed, 19 total
+Snapshots:   0 total
+Time:        2.437 s
+Ran all test suites.
+```
+
 ## Endpoint Documentation
 for this project the thunder client was used
 

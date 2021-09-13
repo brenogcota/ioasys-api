@@ -1,15 +1,9 @@
 const { test, expect } = require("@jest/globals");
-const axios = require('axios');
-
-require('dotenv').config();
-
-const port = process.env.PORT || 3001;
+const httpAdapter = require('../src/infra/http');
 
 test('Should return healthcheck with status 200', async function() {
-    const response = await axios({
-                            url: `http://localhost:${port}/api/v1/healthcheck`,
-                            method: 'get'
-                        });
+    const http = await httpAdapter();
+    const response = await http.get(`/api/v1/healthcheck`);
 
     const { status } = response;
     expect(status).toBe(200);

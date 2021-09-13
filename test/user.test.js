@@ -1,16 +1,16 @@
 const { test, expect } = require("@jest/globals");
-const axiosInstance = require('../src/config/axios');
+const httpAdapter = require('../src/infra/http');
 
 test('Should return all users', async function() {
-    const axios = await axiosInstance();
+    const http = await httpAdapter();
 
-    const status = (await axios.get('/user')).status;
+    const status = (await http.get('/user')).status;
 
     expect(status).toBe(200);
 });
 
 test('Should create a user', async function() {
-    const axios = await axiosInstance();
+    const http = await httpAdapter();
 
     const user = {
         name: 'breno',
@@ -20,32 +20,36 @@ test('Should create a user', async function() {
         city: 'BERILO',
         schooling: 'Superior'
     }
-    const status = (await axios.post(`/user`, user )).status;
 
-    expect(status).toBe(200);
+    let response = (await http.post(`/user`, user )).data;
+
+    expect(response).toMatchObject(user);
 });
 
 test('Should return a user', async function() {
-    const axios = await axiosInstance();
-    const response = (await axios.get(`/user/ec32c885-267d-451a-a817-f7089a5c1792`)).data;
+    const http = await httpAdapter();
+    const { data, status } = await http.get(`/user/ec32c885-267d-451a-a817-f7089a5c1792`);
 
-    expect(response).toHaveLength(1);
+    expect(data).toHaveLength(1);
+    expect(status).toBe(200);
 });
 
 test('Should update a user', async function() {
-    const axios = await axiosInstance();
+    const http = await httpAdapter();
 
     const user = {
         name: 'other breno',
     }
-    const status = (await axios.patch(`/user/ec32c885-267d-451a-a817-f7089a5c1792`, user)).status;
+    const { data, status } = await http.patch(`/user/ec32c885-267d-451a-a817-f7089a5c1792`, user);
 
+    expect(data).toMatchObject(user);
     expect(status).toBe(200);
 });
 
 test('Should delete a user', async function() {
-    const axios = await axiosInstance();
-    const status = (await axios.delete(`/user/ec32c885-267d-451a-a817-f7089a5c1792`)).status;
+    const http = await httpAdapter();
+    const { data, status } = await http.delete(`/user/ec32c885-267d-451a-a817-f7089a5c1792`);
 
+    expect(data).stringMatching('User deleted successfully.')
     expect(status).toBe(200);
 });
