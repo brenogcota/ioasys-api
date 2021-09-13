@@ -11,6 +11,17 @@ Steps to run this project:
 ➜  api git:(master) ✗ npm run dev
 ```
 
+### Populate database
+```sh
+psql (12.8 (Ubuntu 12.8-0ubuntu0.20.04.1))                         
+Type "help" for help.                                              
+                                                                   
+postgres=# insert into position (id, name) values('91265781-5294-4f5e-869b-36c59873e3d6', 'ADMIN')
+postgres=# insert into user (id, name, email, borndate, uf, city, companyId, positionId, schooling, created_at) values('91265781-5294-4f5e-869b-36c59873e3d6', 'super user', 'user@super.net', '1999-06-30', 'MG', 'Berilo', '', '91265781-5294-4f5e-869b-36c59873e3d6', 'Médio', '2021-09-12 01:08:25.259589')
+
+```
+
+
 Test's
 
 ```sh
