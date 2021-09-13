@@ -3,6 +3,7 @@ const apiRouter = require('./api.routes');
 const userRouter = require('./user.routes');
 const positionRouter = require('./position.routes');
 const companyRouter = require('./company.routes');
+const employeeRouter = require('./employee.routes');
 
 const routes = express.Router();
 
@@ -32,5 +33,6 @@ routes.use('/api/v1', apiRouter);
 routes.use('/user', userRouter);
 routes.use('/position', positionRouter);
 routes.use('/company', companyRouter);
+routes.use('/employee', employeeRouter);
 
 module.exports = routes;

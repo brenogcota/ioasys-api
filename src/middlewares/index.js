@@ -1,6 +1,9 @@
 const userValidator = require('./user-validator');
+const companyValidator = require('./company-validator');
+const employeeValidator = require('./employee-validator');
+
 const authMiddleware = require('./auth');
-const { positionAdmin, positionManagerOrUser } = require('./position');
+const { isAdmin, isManagerOrUser, belongsToSame, isCompanyManager } = require('./permissions');
 
 const notFound = (req, res, next) => {
     res.status(404);
@@ -21,7 +24,11 @@ module.exports = {
     notFound,
     errorHandler,
     userValidator,
+    companyValidator,
+    employeeValidator,
     authMiddleware,
-    positionAdmin,
-    positionManagerOrUser
+    isAdmin,
+    isManagerOrUser,
+    belongsToSame,
+    isCompanyManager
 }

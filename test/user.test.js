@@ -22,9 +22,7 @@ test('Should create a user', async function() {
         borndate: '1999-07-01T00:00:00.000Z',
         uf: 'MG',
         city: 'BERILO',
-        schooling: 'Superior',
-        companyName: 'Ioasys',
-        positionName: 'Empregado'
+        schooling: 'Superior'
     }
 
     const status = (await axios.post(`http://localhost:${port}/user`, user)).status;
@@ -32,11 +30,30 @@ test('Should create a user', async function() {
     expect(status).toBe(200);
 });
 
-test('Should return a users', async function() {
+test('Should return a user', async function() {
     const response = (await axios({
                             url: `http://localhost:${port}/user/:id`,
                             method: 'get'
                         })).data;
 
     expect(response).toHaveLength(1);
+});
+
+test('Should update a user', async function() {
+    const user = {
+        name: 'other breno',
+    }
+
+    const status = (await axios.patch(`http://localhost:${port}/user/:id`, user)).status;
+
+    expect(status).toBe(200);
+});
+
+test('Should delete a user', async function() {
+    const status = (await axios({
+                            url: `http://localhost:${port}/user/:id`,
+                            method: 'delete'
+                        })).status;
+
+    expect(status).toBe(200);
 });

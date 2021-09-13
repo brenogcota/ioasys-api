@@ -50,7 +50,7 @@ const UserEntity = new EntitySchema({
         company: {
             target: "Company",
             type: "many-to-one",
-            joinTable: true,
+            joinColumn: true,
             cascade: true
         }
     }

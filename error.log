@@ -1,3 +1,24 @@
 {"query":"INSERT INTO \"user\"(\"id\", \"name\", \"email\", \"borndate\", \"uf\", \"city\", \"schooling\", \"companyId\", \"positionId\", \"created_at\") VALUES ($1, $2, DEFAULT, $3, $4, $5, $6, DEFAULT, DEFAULT, DEFAULT) RETURNING \"created_at\"","parameters":["3c6a0606-a55e-49cd-bb16-c5cd4c27843e","breno","1999-06-30","MG","BERILO","Médio"],"driverError":{"length":288,"name":"error","severity":"ERROR","code":"23502","detail":"Failing row contains (3c6a0606-a55e-49cd-bb16-c5cd4c27843e, breno, null, 1999-06-30, MG, BERILO, null, null, Médio, 2021-09-12 00:41:22.420569).","schema":"public","table":"user","column":"email","file":"execMain.c","line":"1948","routine":"ExecConstraints"},"length":288,"severity":"ERROR","code":"23502","detail":"Failing row contains (3c6a0606-a55e-49cd-bb16-c5cd4c27843e, breno, null, 1999-06-30, MG, BERILO, null, null, Médio, 2021-09-12 00:41:22.420569).","schema":"public","table":"user","column":"email","file":"execMain.c","line":"1948","routine":"ExecConstraints","level":"error","service":"user-service"}
 {"query":"INSERT INTO \"user\"(\"id\", \"name\", \"email\", \"borndate\", \"uf\", \"city\", \"schooling\", \"companyId\", \"positionId\", \"created_at\") VALUES ($1, $2, $3, $4, $5, $6, $7, DEFAULT, DEFAULT, DEFAULT) RETURNING \"created_at\"","parameters":["1fbaa007-1b10-43c8-8794-4c5b8eef9b27","breno","breno@gmail.com","1999-06-30","MG","BERILO","Médio"],"driverError":{"length":236,"name":"error","severity":"ERROR","code":"23505","detail":"Key (email)=(breno@gmail.com) already exists.","schema":"public","table":"user","constraint":"UQ_e12875dfb3b1d92d7d7c5377e22","file":"nbtinsert.c","line":"563","routine":"_bt_check_unique"},"length":236,"severity":"ERROR","code":"23505","detail":"Key (email)=(breno@gmail.com) already exists.","schema":"public","table":"user","constraint":"UQ_e12875dfb3b1d92d7d7c5377e22","file":"nbtinsert.c","line":"563","routine":"_bt_check_unique","level":"error","service":"user-service"}
 {"query":"INSERT INTO \"user\"(\"id\", \"name\", \"email\", \"borndate\", \"uf\", \"city\", \"schooling\", \"companyId\", \"positionId\", \"created_at\") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, DEFAULT) RETURNING \"created_at\"","parameters":["ebc63a36-a284-44df-ab06-5393a7587814","breno","breno@gmail.com","1999-06-30","MG","BERILO","Médio","bfb8e9d4-7c9f-42de-ac40-cfd1e789697a","0140b3ee-8415-4c71-a2b7-b3b8431e9d52"],"driverError":{"length":236,"name":"error","severity":"ERROR","code":"23505","detail":"Key (email)=(breno@gmail.com) already exists.","schema":"public","table":"user","constraint":"UQ_e12875dfb3b1d92d7d7c5377e22","file":"nbtinsert.c","line":"563","routine":"_bt_check_unique"},"length":236,"severity":"ERROR","code":"23505","detail":"Key (email)=(breno@gmail.com) already exists.","schema":"public","table":"user","constraint":"UQ_e12875dfb3b1d92d7d7c5377e22","file":"nbtinsert.c","line":"563","routine":"_bt_check_unique","level":"error","service":"user-service"}
+{"message":"Relation \"user\" was not found; please check if it is correct and really exists in your entity.","level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"query":"INSERT INTO \"user\"(\"id\", \"name\", \"email\", \"borndate\", \"uf\", \"city\", \"schooling\", \"companyId\", \"positionId\", \"created_at\") VALUES ($1, $2, $3, $4, $5, $6, $7, DEFAULT, DEFAULT, DEFAULT) RETURNING \"created_at\"","parameters":["ebbcfcc1-95a9-4e75-b3d6-f06b452a5e75","breno","breno5@gmail.com","1999-06-30","MG","BERILO","Superior"],"driverError":{"length":237,"name":"error","severity":"ERROR","code":"23505","detail":"Key (email)=(breno5@gmail.com) already exists.","schema":"public","table":"user","constraint":"UQ_e12875dfb3b1d92d7d7c5377e22","file":"nbtinsert.c","line":"563","routine":"_bt_check_unique"},"length":237,"severity":"ERROR","code":"23505","detail":"Key (email)=(breno5@gmail.com) already exists.","schema":"public","table":"user","constraint":"UQ_e12875dfb3b1d92d7d7c5377e22","file":"nbtinsert.c","line":"563","routine":"_bt_check_unique","level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}

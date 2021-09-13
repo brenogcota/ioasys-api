@@ -1,0 +1,434 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ioasys-api",
+    "dateExported": "2021-09-13T04:20:46.142Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "containerId": "",
+            "sortNum": 10000,
+            "name": "session",
+            "_id": "93469b40-2d34-45b5-938c-c19c5fa6d06d",
+            "created": "2021-09-12T04:48:45.827Z"
+        },
+        {
+            "containerId": "",
+            "sortNum": 20000,
+            "name": "User",
+            "_id": "5fb38b95-2db9-4af0-8fa0-2810d47e2bcd",
+            "created": "2021-09-12T04:57:09.127Z"
+        },
+        {
+            "containerId": "",
+            "sortNum": 30000,
+            "name": "Company",
+            "_id": "a3c07459-d024-4a25-b293-a0c6aaa5810f",
+            "created": "2021-09-13T00:49:59.667Z"
+        },
+        {
+            "containerId": "",
+            "sortNum": 40000,
+            "name": "Employee",
+            "_id": "92829f81-3a03-4ecf-b880-67e0d9264599",
+            "created": "2021-09-13T03:10:40.475Z"
+        }
+    ],
+    "requests": [
+        {
+            "containerId": "93469b40-2d34-45b5-938c-c19c5fa6d06d",
+            "sortNum": 10000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/session",
+            "url": "http://localhost:4000/api/v1/session",
+            "method": "POST",
+            "modified": "2021-09-13T04:11:38.068Z",
+            "created": "2021-09-12T04:48:55.109Z",
+            "_id": "ce9e5936-ef84-4732-8895-16d7e86533d1",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"breno@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "5fb38b95-2db9-4af0-8fa0-2810d47e2bcd",
+            "sortNum": 20000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/user",
+            "url": "http://localhost:4000/user",
+            "method": "POST",
+            "modified": "2021-09-13T04:04:21.820Z",
+            "created": "2021-09-12T04:57:17.859Z",
+            "_id": "56e87960-e9da-41d3-8fef-c2c072efcdc8",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"breno\",\n    \"email\": \"breno8@gmail.com\",\n    \"borndate\": \"1999-07-01T00:00:00.000Z\",\n    \"uf\": \"MG\",\n    \"city\": \"BERILO\",\n    \"schooling\": \"Superior\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWIwYzgwLWQ2ZmEtNDExYS1hZDljLThjNWE3MzgzZTQ2OCIsImlhdCI6MTYzMTQyNzc2MywiZXhwIjoxNjMxNjA3NzYzfQ.JRFzTNhy7l7bfnK7eS1t2va6JWCM8iZVnxOichLUykA"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "5fb38b95-2db9-4af0-8fa0-2810d47e2bcd",
+            "sortNum": 30000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/user",
+            "url": "http://localhost:4000/user",
+            "method": "GET",
+            "modified": "2021-09-12T05:45:09.871Z",
+            "created": "2021-09-12T05:19:24.094Z",
+            "_id": "ba80bf41-97e3-4ad1-ac6e-e0dd2a358d99",
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWIwYzgwLWQ2ZmEtNDExYS1hZDljLThjNWE3MzgzZTQ2OCIsImlhdCI6MTYzMTQyNTQ4MSwiZXhwIjoxNjMxNjA1NDgxfQ.84ZQnYIPzcpUznQoAQptY36jCVLjhmdRkIG9PD1dcrY"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "5fb38b95-2db9-4af0-8fa0-2810d47e2bcd",
+            "sortNum": 40000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/user/:id",
+            "url": "http://localhost:4000/user/475fcce1-2b1d-4a58-a0a8-3724dbfecb23",
+            "method": "GET",
+            "modified": "2021-09-12T06:24:44.533Z",
+            "created": "2021-09-12T06:05:23.881Z",
+            "_id": "7e8b9d77-a617-4a72-8973-94daf2a941f2",
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWIwYzgwLWQ2ZmEtNDExYS1hZDljLThjNWE3MzgzZTQ2OCIsImlhdCI6MTYzMTQyNTQ4MSwiZXhwIjoxNjMxNjA1NDgxfQ.84ZQnYIPzcpUznQoAQptY36jCVLjhmdRkIG9PD1dcrY"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "5fb38b95-2db9-4af0-8fa0-2810d47e2bcd",
+            "sortNum": 50000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/user/:id",
+            "url": "http://localhost:4000/user/475fcce1-2b1d-4a58-a0a8-3724dbfecb23",
+            "method": "PATCH",
+            "modified": "2021-09-12T07:23:08.972Z",
+            "created": "2021-09-12T06:42:11.256Z",
+            "_id": "df6bd4b0-d47a-4fe9-bab0-20bcb629b926",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"doouglass\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWIwYzgwLWQ2ZmEtNDExYS1hZDljLThjNWE3MzgzZTQ2OCIsImlhdCI6MTYzMTQzMTM3OCwiZXhwIjoxNjMxNjExMzc4fQ.OQqQE4oPwLkWtsZUJQfDhCgaS5AszLWkhYcguiZ6AAw"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "5fb38b95-2db9-4af0-8fa0-2810d47e2bcd",
+            "sortNum": 60000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/user/:id",
+            "url": "http://localhost:4000/user/475fcce1-2b1d-4a58-a0a8-3724dbfecb23",
+            "method": "DELETE",
+            "modified": "2021-09-12T07:24:03.389Z",
+            "created": "2021-09-12T07:23:29.512Z",
+            "_id": "6f6b6ea3-9c9b-44d3-881e-292ce5a3df1b",
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWIwYzgwLWQ2ZmEtNDExYS1hZDljLThjNWE3MzgzZTQ2OCIsImlhdCI6MTYzMTQzMTM3OCwiZXhwIjoxNjMxNjExMzc4fQ.OQqQE4oPwLkWtsZUJQfDhCgaS5AszLWkhYcguiZ6AAw"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "a3c07459-d024-4a25-b293-a0c6aaa5810f",
+            "sortNum": 70000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/company",
+            "url": "http://localhost:4000/company",
+            "method": "POST",
+            "modified": "2021-09-13T04:08:10.770Z",
+            "created": "2021-09-13T00:50:08.340Z",
+            "_id": "665452b7-aa65-4fa0-bfba-d7ca0b634b7a",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Ioasys - a\",\n    \"description\": \"Software\",\n    \"occupation\": \"software\",\n    \"founded_in\": \"2020-07-01\",\n    \"director\": \"breno@gmail.com\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlYzI2ZDUwLTc0YzgtNGE5ZC05ZTU1LWUxMWZkMWY5YTQ0MyIsImlhdCI6MTYzMTQ5NDk4NCwiZXhwIjoxNjMxNjc0OTg0fQ.vLUz0-Pou5DYccznAXYFphBTUMXZWiixUakIhGmx1s4"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "a3c07459-d024-4a25-b293-a0c6aaa5810f",
+            "sortNum": 80000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/company",
+            "url": "http://localhost:4000/company",
+            "method": "GET",
+            "modified": "2021-09-13T01:11:38.340Z",
+            "created": "2021-09-13T01:09:50.549Z",
+            "_id": "3e96629f-aad3-4a43-969c-eaa56687fdda",
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlYzI2ZDUwLTc0YzgtNGE5ZC05ZTU1LWUxMWZkMWY5YTQ0MyIsImlhdCI6MTYzMTQ5NDk4NCwiZXhwIjoxNjMxNjc0OTg0fQ.vLUz0-Pou5DYccznAXYFphBTUMXZWiixUakIhGmx1s4"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "a3c07459-d024-4a25-b293-a0c6aaa5810f",
+            "sortNum": 90000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/company/:id",
+            "url": "http://localhost:4000/company/ec32c885-267d-451a-a817-f7089a5c1792",
+            "method": "GET",
+            "modified": "2021-09-13T01:17:55.145Z",
+            "created": "2021-09-13T01:17:04.850Z",
+            "_id": "7311c4cd-b1e7-4c19-9884-edf719ab0dc6",
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlYzI2ZDUwLTc0YzgtNGE5ZC05ZTU1LWUxMWZkMWY5YTQ0MyIsImlhdCI6MTYzMTQ5NDk4NCwiZXhwIjoxNjMxNjc0OTg0fQ.vLUz0-Pou5DYccznAXYFphBTUMXZWiixUakIhGmx1s4"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "a3c07459-d024-4a25-b293-a0c6aaa5810f",
+            "sortNum": 100000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/company/:id",
+            "url": "http://localhost:4000/company/4d6705a4-46b7-439e-a178-654689a59b40",
+            "method": "DELETE",
+            "modified": "2021-09-13T01:22:54.837Z",
+            "created": "2021-09-13T01:22:03.323Z",
+            "_id": "38d3b4c5-cce2-4825-922a-c7dce25d4f42",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "a3c07459-d024-4a25-b293-a0c6aaa5810f",
+            "sortNum": 110000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/company/:id",
+            "url": "http://localhost:4000/company/ec32c885-267d-451a-a817-f7089a5c1792",
+            "method": "PATCH",
+            "modified": "2021-09-13T02:25:39.254Z",
+            "created": "2021-09-13T02:09:55.834Z",
+            "_id": "ed909c25-4acc-4d98-b845-293b91b8f3b8",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Ioasys\",\n    \"description\": \"Software House\",\n    \"occupation\": \"software\",\n    \"founded_in\": \"2020-07-01\",\n    \"director\": \"breno5@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "92829f81-3a03-4ecf-b880-67e0d9264599",
+            "sortNum": 120000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/employee",
+            "url": "http://localhost:4000/employee/bfb8e9d4-7c9f-42de-ac40-cfd1e789697a",
+            "method": "GET",
+            "modified": "2021-09-13T04:05:01.305Z",
+            "created": "2021-09-13T03:10:48.243Z",
+            "_id": "1af45f1c-212e-4125-9e18-06f6500c434b",
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMzliMDRiLTAyMjktNGJjNi04OWNmLTE0MmEzOTgzYWRhNSIsImlhdCI6MTYzMTUwNTg4NywiZXhwIjoxNjMxNjg1ODg3fQ.yVQkIR2ne1p9LBE8nLrYdBARRXjsY8adBPprwK1KA3c"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "92829f81-3a03-4ecf-b880-67e0d9264599",
+            "sortNum": 130000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/employee",
+            "url": "http://localhost:4000/employee",
+            "method": "POST",
+            "modified": "2021-09-13T04:17:26.120Z",
+            "created": "2021-09-13T04:06:40.789Z",
+            "_id": "bc269614-973e-40ce-8058-a80ccf8d8bd7",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"userId\": \"3039b04b-0229-4bc6-89cf-142a3983ada5\",\n    \"companyId\": \"bfb8e9d4-7c9f-42de-ac40-cfd1e789697a\",\n    \"positionName\": \"DIRETOR\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWIwYzgwLWQ2ZmEtNDExYS1hZDljLThjNWE3MzgzZTQ2OCIsImlhdCI6MTYzMTUwNjI5OCwiZXhwIjoxNjMxNjg2Mjk4fQ.k3G55cVaP1K0PF1jziVVctima2UzCBogcxJxSSHhEpA"
+            },
+            "tests": []
+        },
+        {
+            "containerId": "92829f81-3a03-4ecf-b880-67e0d9264599",
+            "sortNum": 140000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "c3103c1d-4e3e-48f7-8bea-f5221f214ed7",
+            "name": "/employee ",
+            "url": "http://localhost:4000/employee/3039b04b-0229-4bc6-89cf-142a3983ada5",
+            "method": "DELETE",
+            "modified": "2021-09-13T04:18:41.435Z",
+            "created": "2021-09-13T04:17:58.898Z",
+            "_id": "d865cde1-a8dd-44c1-8ad4-f943fbeb6a53",
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWIwYzgwLWQ2ZmEtNDExYS1hZDljLThjNWE3MzgzZTQ2OCIsImlhdCI6MTYzMTUwNjI5OCwiZXhwIjoxNjMxNjg2Mjk4fQ.k3G55cVaP1K0PF1jziVVctima2UzCBogcxJxSSHhEpA"
+            },
+            "tests": []
+        }
+    ]
+}

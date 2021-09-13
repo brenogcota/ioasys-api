@@ -3,21 +3,29 @@ const { getRepository } = require('typeorm');
 const { v4 } = require('uuid');
 const Company = require('../../entity/Company');
 const User = require('../../entity/User');
-const logger = require('../../infra/logger');
+
+const index = async (req, res, next) => {
+    try {
+        const companyRepository = getRepository(Company);
+        let company = await companyRepository.find();
+    
+        res.status(200).json(company);
+    } catch (err) {
+        next(err)
+    }
+}
 
 const create = async (req, res, next) => {
     try {
         const { name, description, occupation, founded_in, director } = req.body;
     
-        // const userRepository = getRepository(User);
-        // const user = userRepository.find({ 
-        //                                     where: { email: director_email },
-        //                                     relations: ['position']
-        //                                 });
-    
-        //logger.info(user);
-    
-        //if(!user) return res.status(404).json({ message: 'User not found.' });
+        const userRepository = getRepository(User);
+        const user = await userRepository.findOne({ 
+                                            where: { email: director },
+                                            relations: ['position']
+                                        });
+        
+        if(!user || user.position.name != 'DIRETOR') return res.status(404).json({ message: 'Email must belong to a director' });
     
         const newCompany = {
             id: v4(),
@@ -25,7 +33,7 @@ const create = async (req, res, next) => {
             description, 
             occupation, 
             founded_in, 
-            director
+            director: user.name
         }
     
         const companyRepository = getRepository(Company);
@@ -39,6 +47,68 @@ const create = async (req, res, next) => {
     }
 }
 
+const show = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const companyRepository = getRepository(Company);
+        let company = await companyRepository.findOne({ where: { id } });
+
+        if(!company) return res.status(404).json({ message: 'Company does not exists.' });
+    
+        res.status(200).json(company);
+    } catch (err) {
+        next(err)
+    }
+}
+
+const update = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const { director } = req.body || null;
+
+        const companyRepository = getRepository(Company);
+        let company = await companyRepository.findOne({ where: { id } });
+
+        if(!company) return res.status(404).json({ message: 'Company does not exists.' });
+
+        if(director) {
+            const userRepository = getRepository(User);
+            const user = await userRepository.findOne({ 
+                                            where: { email: director },
+                                            relations: ['position']
+                                        });
+        
+            if(!user || user.position.name != 'DIRETOR') return res.status(404).json({ message: 'Email must belong to a director' });
+            req.body.director = user.name;
+        }
+
+        await companyRepository.update(id, req.body);
+        company = await companyRepository.findOne({ where: { id } });
+        res.status(200).json(company);
+    } catch (err) {
+        next(err)
+    }
+}
+
+const remove = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const companyRepository = getRepository(Company);
+        let company = await companyRepository.findOne({ where: { id } });
+
+        if(!company) return res.status(404).json({ message: 'Company does not exists.' });
+
+        await companyRepository.remove(company);
+        return res.status(200).json({ message: 'Company deleted successfully.' });
+    } catch (err) {
+        next(err)
+    }
+}
+
 module.exports = {
-    create
+    index,
+    create,
+    show,
+    update,
+    remove
 }

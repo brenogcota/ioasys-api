@@ -22,9 +22,6 @@ const schema = Joi.object({
 
     email: Joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
-
-    companyName: Joi.string().required(),
-    positionName: Joi.string().required(),
 })
 
 module.exports = schema;
