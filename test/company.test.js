@@ -6,7 +6,7 @@ require('dotenv').config();
 const port = process.env.PORT || 3001;
 
 test('Should return all companies', async function() {
-    const status = (await axios.get(`http://localhost:${port}/company`, company )).status;
+    const status = (await axios.get(`http://localhost:${port}/company`)).status;
     
     expect(status).toBe(200);
 });
@@ -26,7 +26,7 @@ test('Should create a company', async function() {
 });
 
 test('Should return a company', async function() {
-    const status = (await axios.get(`http://localhost:${port}/company/:id`, company )).status;
+    const status = (await axios.get(`http://localhost:${port}/company/:id` )).status;
     
     expect(status).toBe(200);
 });
@@ -40,13 +40,13 @@ test('Should update a company', async function() {
         director: 'breno@gmail.com'
     }
 
-    const status = (await axios.patch(`http://localhost:${port}/company`, company )).status;
+    const status = (await axios.patch(`http://localhost:${port}/company/:id`, company )).status;
     
     expect(status).toBe(200);
 });
 
 test('Should remove a company', async function() {
-    const status = (await axios.delete(`http://localhost:${port}/company/:id`, company )).status;
+    const status = (await axios.delete(`http://localhost:${port}/company/:id`)).status;
     
     expect(status).toBe(200);
 });

@@ -8,7 +8,7 @@ const port = process.env.PORT || 3001;
 
 test('Should return all employees', async function() {
     const status = (await axios({
-                            url: `http://localhost:${port}/employee`,
+                            url: `http://localhost:${port}/employee/:id`,
                             method: 'get'
                         })).status;
 
