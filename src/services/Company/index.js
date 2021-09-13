@@ -6,8 +6,19 @@ const User = require('../../entity/User');
 
 const index = async (req, res, next) => {
     try {
+        const query = req.query;
+        
+        const keys = Object.keys(query);
+        const values = Object.values(query);
+
+        const filters = keys.map((key, index) => {
+            return { 
+                [key]: Like(`%${values[index]}%`)
+             }
+        })
+
         const companyRepository = getRepository(Company);
-        let company = await companyRepository.find();
+        let company = await companyRepository.find({ where: filters});
     
         res.status(200).json(company);
     } catch (err) {

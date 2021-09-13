@@ -1,5 +1,5 @@
 
-const { getRepository } = require('typeorm');
+const { getRepository, Like } = require('typeorm');
 const { v4 } = require('uuid');
 const User = require('../../entity/User');
 
@@ -7,8 +7,19 @@ const logger = require('../../infra/logger');
 
 const index = async (req, res, next) => {
     try {
+        const query = req.query;
+        
+        const keys = Object.keys(query);
+        const values = Object.values(query);
+
+        const filters = keys.map((key, index) => {
+            return { 
+                [key]: Like(`%${values[index]}%`)
+             }
+        })
+
         const userRepository = getRepository(User);
-        let user = await userRepository.find();
+        let user = await userRepository.find({ where: filters});
     
         res.status(200).json(user);
     } catch (err) {

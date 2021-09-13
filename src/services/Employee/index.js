@@ -7,10 +7,22 @@ const logger = require('../../infra/logger');
 
 const index = async (req, res, next) => {
     try {
+        const query = req.query;
+        
+        const keys = Object.keys(query);
+        const values = Object.values(query);
+
+        const filters = keys.map((key, index) => {
+            return { 
+                [key]: Like(`%${values[index]}%`)
+             }
+        })
+        
         const { id } = req.params;
+        filters.companyId = id;
         
         const userRepository = getRepository(User);
-        const user = await userRepository.find({ where: { companyId: id } });
+        const user = await userRepository.find({ where: filters });
     
         res.status(200).json(user);
     } catch (err) {
